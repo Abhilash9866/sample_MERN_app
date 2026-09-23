@@ -12,7 +12,6 @@ app.use("/api/hr", hrroutes);
 //open browser localhost:3000/api/hr/employees
 app.use("/api/emp", emproutes);
 //open browser localhost:3000/api/emp/viewtasks
-
 //run the server in port 3000
 app.listen(3000,()=>{
     console.log("server is running on port 3000")
