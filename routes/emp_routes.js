@@ -9,17 +9,25 @@ router.post("/register",async(req,res)=>{
     let result=await newuser.save();
     res.send(result);
 });
+//localhost:3000/login
 router.post("/login",async(req,res)=>{
     let user=await users.findOne({email:req.body.email});
     if (user){
         let passmatch=await bcrypt.compare(req.body.password,user.password);
         if (passmatch){
-            res.send("Login successful");
+            res.send({"msg":"login success",
+            "user":{
+                id:user._id,
+                name:user.name,
+                email:user.email,
+                role:user.role
+            }}
+        );
         }else{
-            res.send("Password invalid");
+            res.send({"msg":"Password invalid"});
         }
     }else{
-        res.send("Email invalid");
+        res.send({"msg":"Email invalid"});
     }
 });
 router.get("/viewtasks",(req,res)=>{

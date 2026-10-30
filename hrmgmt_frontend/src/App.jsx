@@ -6,13 +6,21 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Services from './pages/services'
 import Login from './pages/Login'
+import Register from './pages/Register'
+import AdminHome from './pages/AdminHome'
+import HrHome from './pages/HrHome'
+import EmpHome from './pages/EmpHome'
 function App() {
   return (
     <div>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route> 
+    <Route path='/adminhome' element={<AdminHome></AdminHome>}></Route>
+    <Route path='/hrhome' element={<HrHome></HrHome>}></Route>
+    <Route path='/emphome' element={<EmpHome></EmpHome>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+         <Route path="/register" element={<Register></Register>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/serivices' element={<Services></Services>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
